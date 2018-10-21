@@ -1,0 +1,14 @@
+from readData import importdata
+import pytest
+
+@pytest.mark.parametrize("a, expected",[
+    ("test_data/test_data1.csv",10000),
+    ("test_data/test_data2.csv",10000),
+    ("test_data/test_data31.csv",10000),
+    ("test_data/test_data32.csv",10000)
+])
+def test_importdata(a,expected):
+    data=importdata(a)
+    count_row=data.shape[0]
+    assert count_row==expected
+
