@@ -20,7 +20,6 @@ def validate(input_data):
 
         # Filter out dataframe outside of range
         df3 = df2[df2['Voltage'] <= 300]
-
     except ValueError:
         logging.error("A panda dataframe is needed to run this method")
 
