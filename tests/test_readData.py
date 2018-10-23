@@ -12,4 +12,3 @@ def test_import_data(a, expected):
     data = import_data(a)
     count_row = data.shape[0]
     assert count_row == expected
-
