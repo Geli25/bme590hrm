@@ -10,5 +10,6 @@ import pytest
 ])
 def test_import_data(a, expected):
     data = import_data(a)
+    # calculating the number of rows after loading to see if all are loaded
     count_row = data.shape[0]
     assert count_row == expected

@@ -13,5 +13,6 @@ import pytest
 def test_validate_data(a, expected):
     data = import_data(a)
     validated_data = validate(data)
+    # calculating the number of rows after filtering to see if it is correct
     count_row = validated_data.shape[0]
     assert count_row == expected
