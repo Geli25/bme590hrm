@@ -2,7 +2,7 @@ from ..readData import import_data
 import pytest
 
 
-@pytest.mark.parametrize("a, expected",[
+@pytest.mark.parametrize("a, expected", [
     ("test_data/test_data1.csv", 10000),
     ("test_data/test_data2.csv", 10000),
     ("test_data/test_data31.csv", 10000),

@@ -21,10 +21,3 @@ def validate(input_data):
 
     print(df3)
     return df3
-
-
-
-
-
-
-

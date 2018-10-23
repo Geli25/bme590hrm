@@ -6,5 +6,3 @@ def import_data(directory):
     data = pd.read_csv(directory, names=headers)
     return data
 
-
-
