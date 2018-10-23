@@ -1,5 +1,5 @@
-from readData import importdata
-from validateData import validate
+from ..readData import import_data
+from ..validateData import validate
 import pytest
 
 
@@ -8,10 +8,10 @@ import pytest
     ("test_data/test_data2.csv", 10000),
     ("test_data/test_data30.csv", 9998),
     ("test_data/test_data31.csv", 9996),
-    ("test_data/test_data32.csv", 10000)
+    ("test_data/test_data32.csv", 9601)
 ])
 def test_validate_data(a, expected):
-    data = importdata(a)
+    data = import_data(a)
     validated_data = validate(data)
     count_row = validated_data.shape[0]
     assert count_row == expected
