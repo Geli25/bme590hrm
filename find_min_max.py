@@ -1,9 +1,15 @@
-import pandas as pd
+from readData import import_data
+from validateData import validate
 
 
 def find_min_max(data):
-    min = pd.data.Voltage.min()
-    max = pd.data.Time.max()
-    print(min,max)
-    min_max = [min, max]
+    ecg_min = data.Voltage.min()
+    ecg_max = data.Voltage.max()
+    print(ecg_min, ecg_max)
+    min_max = [ecg_min, ecg_max]
     return min_max
+
+
+if __name__ == '__main__':
+    a=validate(import_data("test_data/test_data1.csv"))
+    find_min_max(a)
