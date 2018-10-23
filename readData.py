@@ -9,7 +9,7 @@ def import_data(directory):
         # reading data as panda dataframe
         data = pd.read_csv(directory, names=headers)
     except FileNotFoundError:
-        logging.error("The file either does not exist or the file path is wrong, recheck")
+        logging.error("The file either does not exist/file path is wrong")
         return
     except ValueError:
         logging.error("A path is needed to run this function")
