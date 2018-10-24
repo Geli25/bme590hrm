@@ -2,6 +2,7 @@ import pytest
 from readData import import_data
 from validateData import validate
 from find_min_max import find_min_max
+from find_peak import find_peak
 
 
 @pytest.mark.parametrize("a, expected", [
@@ -44,3 +45,17 @@ def test_find_min_max(a, expected):
     validated_data = validate(data)
     min_max = find_min_max(validated_data)
     assert min_max == expected
+
+
+@pytest.mark.parametrize("a,expected", [
+    ("test_data/test_data17.csv", 19),
+    ("test_data/test_data1.csv", 35),
+    ("test_data/test_data30.csv", 37),
+    ("test_data/test_data31.csv", 19),
+    ("test_data/test_data32.csv", 19)
+])
+def test_find_peak(a, expected):
+    data = import_data(a)
+    validated_data = validate(data)
+    peaks = find_peak(validated_data)
+    assert peaks[1] == expected
