@@ -8,4 +8,3 @@ def find_peak(data):
     num_of_beats = peaks[0].__len__()
     print(peaks, num_of_beats)
     return peaks, num_of_beats
-
