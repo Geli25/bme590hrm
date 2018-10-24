@@ -9,7 +9,3 @@ def find_min_max(data):
     print(min_max)
     return min_max
 
-
-if __name__ == '__main__':
-    a = validate(import_data("test_data/test_data32.csv"))
-    find_min_max(a)
