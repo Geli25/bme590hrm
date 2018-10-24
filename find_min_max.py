@@ -8,4 +8,3 @@ def find_min_max(data):
     min_max = (ecg_min, ecg_max)
     print(min_max)
     return min_max
-
