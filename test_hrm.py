@@ -30,7 +30,7 @@ def test_import_data(directory, expected):
 ])
 def test_validate_data(directory, expected):
     data = import_data(directory)
-    validated_data = validate(directory)
+    validated_data = validate(data)
     # calculating the number of rows after filtering to see if it is correct
     count_row = validated_data.shape[0]
     assert count_row == expected
@@ -102,9 +102,8 @@ def test_get_duration(directory, expected):
     ("test_data/test_data32.csv", 10, 20, 77)
 ])
 def test_calculate_mean_bpm(directory, start_time, end_time, expected):
-    data = import_data(directory)
-    validated_data = validate(data)
-    peaks = find_peak(validated_data)
-    beat_times = get_beat_times(peaks, validated_data)
-    mean_bpm = calculate_mean_bpm(validated_data, beat_times, start_time, end_time)
+    data = validate(import_data(directory))
+    peaks = find_peak(data)
+    beats = get_beat_times(peaks, data)
+    mean_bpm = calculate_mean_bpm(data, beats, start_time, end_time)
     assert mean_bpm == expected
