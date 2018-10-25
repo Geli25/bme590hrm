@@ -7,5 +7,4 @@ def find_peak(data):
     peaks = ss.find_peaks(data.Voltage, height=min_max, distance=200)
     num_of_beats = peaks[0].__len__()
     print(peaks, num_of_beats)
-    peak_data= [peaks, num_of_beats]
-    return peak_data
+    return peaks, num_of_beats

@@ -12,5 +12,5 @@ def get_beat_times(peaks, data):
         print(mod_time_of_beat)
         beat_times.append(mod_time_of_beat)
     numpy_beat_times = np.array(beat_times)
-    print(numpy_beat_times)
+    print(numpy_beat_times[0], numpy_beat_times[-1])
     return numpy_beat_times
