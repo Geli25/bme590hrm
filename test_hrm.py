@@ -3,6 +3,7 @@ from readData import import_data
 from validateData import validate
 from find_min_max import find_min_max
 from find_peak import find_peak
+from get_duration import get_duration
 
 
 @pytest.mark.parametrize("a, expected", [
@@ -59,3 +60,17 @@ def test_find_peak(a, expected):
     validated_data = validate(data)
     peaks = find_peak(validated_data)
     assert peaks[1] == expected
+
+
+@pytest.mark.parametrize("a,expected", [
+    ("test_data/test_data15.csv", 13.887),
+    ("test_data/test_data1.csv", 27.775),
+    ("test_data/test_data30.csv", 39.996),
+    ("test_data/test_data31.csv", 13.887),
+    ("test_data/test_data32.csv", 13.887)
+])
+def test_get_duration(a, expected):
+    data = import_data(a)
+    validated_data = validate(data)
+    duration = get_duration(validated_data)
+    assert duration == expected
