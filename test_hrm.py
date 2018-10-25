@@ -4,6 +4,7 @@ from validateData import validate
 from find_min_max import find_min_max
 from find_peak import find_peak
 from get_duration import get_duration
+from get_beat_times import get_beat_times
 
 
 @pytest.mark.parametrize("a, expected", [
@@ -74,3 +75,19 @@ def test_get_duration(a, expected):
     validated_data = validate(data)
     duration = get_duration(validated_data)
     assert duration == expected
+
+
+@pytest.mark.parametrize("a,expected", [
+    ("test_data/test_data1.csv", [0.214, 27.772]),
+    ("test_data/test_data20.csv", [0.043, 13.543]),
+    ("test_data/test_data30.csv", [0.16, 39.436]),
+    ("test_data/test_data31.csv", [0.042, 13.537]),
+    ("test_data/test_data32.csv", [0.028, 13.003])
+])
+def test_get_duration(a, expected):
+    data = import_data(a)
+    validated_data = validate(data)
+    peaks = find_peak(validated_data)
+    beat_times = get_beat_times(peaks, validated_data)
+    time_check = [beat_times[0], beat_times[-1]]
+    assert time_check == expected
