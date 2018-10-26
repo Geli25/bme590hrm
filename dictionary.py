@@ -1,5 +1,5 @@
-from readData import import_data
-from validateData import validate
+from read_data import import_data
+from validate_data import validate
 from find_min_max import find_min_max
 from find_peak import find_peak
 from get_duration import get_duration
