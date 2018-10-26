@@ -28,4 +28,4 @@ def create_dictionary(directory):
 
 
 if __name__ == '__main__':
-    create_dictionary("test_data/test_data1.csv")
+    create_dictionary("test_data/test_data32.csv")
