@@ -1,4 +1,5 @@
 import pytest
+from pathlib import Path
 from readData import import_data
 from validateData import validate
 from find_min_max import find_min_max
@@ -123,3 +124,20 @@ def test_calculate_mean_bpm(directory, expected):
     results = [dictionary["mean_hr_bpm"], dictionary["voltage_extremes"]]
     assert results == expected
 
+
+@pytest.mark.parametrize("directory, expected", [
+    ("test_data/test_data14.csv", True),
+    ("test_data/test_data2.csv", True),
+    ("test_data/test_data30.csv", True),
+    ("test_data/test_data31.csv", True),
+    ("test_data/test_data32.csv", True)
+])
+def test_calculate_mean_bpm(directory, expected):
+    output_json(directory)
+    file_name = directory.split('/')[-1].split('.')[0]
+    my_file = Path(file_name+".json")
+    if my_file.is_file():
+        exists = True
+    else:
+        exists = False
+    assert exists == expected
