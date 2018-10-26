@@ -6,6 +6,8 @@ from find_peak import find_peak
 from get_duration import get_duration
 from get_beat_times import get_beat_times
 from calculate_mean_bpm import calculate_mean_bpm
+from dictionary import create_dictionary
+from dictionary_output import output_json
 
 
 @pytest.mark.parametrize("directory, expected", [
@@ -107,3 +109,5 @@ def test_calculate_mean_bpm(directory, start_time, end_time, expected):
     beats = get_beat_times(peaks, data)
     mean_bpm = calculate_mean_bpm(data, beats, start_time, end_time)
     assert mean_bpm == expected
+
+
