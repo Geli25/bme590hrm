@@ -10,7 +10,7 @@ def output_json(directory):
     between the last occurring '/' and the first occurring '.', and appends
     ".json" after the returned string, creating the file name. It then
     writes the json data into that file and formats the data in a readable
-    way (prettifying the dictionary, basically).
+    way (prettifying the dictionary, basically). Can be used as __main__.
 
     Args:
         directory(string): Path to the file in a string format.
