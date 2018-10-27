@@ -10,7 +10,7 @@ BME590
 ***To run this project, change the dictionary_output.py into main, uncomment the last few lines,
 and input the file directory as a string. (Takes one file at a time, no iteration(yet))***
 
-### Project Documentations:
+### Project Documentation:
 [Click here to view documentation](https://geli25.github.io/bme590hrm/) 
 (Hosted on Github Pages)
 
