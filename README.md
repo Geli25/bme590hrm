@@ -71,6 +71,9 @@ am only using if statements. Will update by Sunday.
 
 * I really hate PEP8 but I guess it's necessary for unify formats.
 
-* Sphinx is really glitchy.
+* Sphinx is really glitchy with PyCharm. It always shows errors which is misleading.
+
+* I am torn about how to push changes when fixing a typo: directly to master or a branch called "typo"
+and just constantly merge from here. I did both, but maybe it's better to have a branch.
 
 * May also be good to implement iteration and run the program for all files in a folder.
