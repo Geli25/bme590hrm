@@ -9,7 +9,7 @@ BME590
 ***To run this project, change the dictionary_output.py into main, uncomment the last few lines,
 and input the file directory as a string. (Takes one file at a time, no iteration(yet))***
 
-###Files for this project:
+### Files for this project:
 
 - **read_data.py**: Imports the data into a pandas dataframe.
 
