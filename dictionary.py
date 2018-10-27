@@ -8,6 +8,15 @@ from calculate_mean_bpm import calculate_mean_bpm
 
 
 def create_dictionary(directory):
+    """This function executes calculations of data & outputs "metrics" dictionary.
+
+    Args:
+        directory(string): Path to the file in a string format.
+
+    Returns:
+        dict: A dictionary with key value pairs of necessary ECG analysis data.
+
+    """
     data = validate(import_data(directory))
     min_max = find_min_max(data)
     duration = get_duration(data)
