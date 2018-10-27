@@ -56,7 +56,7 @@ in this file, simply change the file name to main and uncomment the last few lin
     
 ### Personal Thoughts/Comments:
 * I really messed up on the first couple of branches: forgetting to commit to certain branches, pushes to master directly, merging 
-when I should have been pulling. But after that I got a better sence of how it worked.
+when I should have been pulling. But after that I got a better sense of how it worked.
 
 * I need to incorporate more error throwing for invalid user input. Right now I
 am only using if statements. Will update by Sunday.
