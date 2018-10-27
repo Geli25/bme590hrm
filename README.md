@@ -1,6 +1,7 @@
 # Heart Rate Monitor
 
 [![Build Status](https://travis-ci.org/Geli25/bme590hrm.svg?branch=master)](https://travis-ci.org/Geli25/bme590hrm)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 By Angelina Liu
 
