@@ -49,7 +49,7 @@ in this file, simply change the file name to main and uncomment the last few lin
     * *test_find_peak*: Checks the number of peaks (second returned value) only.
     * *test_get_duration*: Checks the value of the duration.
     * *test_get_beat_time*: Checks the first and last value of the numpy array.
-    * *test_calculate_mean_bpm*:  Checks the returned bpm while specifiying time frame in parametrize.
+    * *test_calculate_mean_bpm*:  Checks the returned bpm while specifying time frame in parametrize.
     * *test_dictionary*: Checks the bpm value and min_max value. (Since all other values are used to calculate the bpm, if those values are not correct
     then the bpm value should also be wrong, therefore causing the test to fail regardless, so no need to check for those values.)
     * *test_dictionary_output*: Checks if the .json file exists in the directory via a boolean.
