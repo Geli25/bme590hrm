@@ -88,7 +88,7 @@ def test_get_duration(directory, expected):
     ("test_data/test_data31.csv", [0.042, 13.537]),
     ("test_data/test_data32.csv", [0.028, 13.003])
 ])
-def test_get_duration(directory, expected):
+def test_get_beat_times(directory, expected):
     data = import_data(directory)
     validated_data = validate(data)
     peaks = find_peak(validated_data)
@@ -119,7 +119,7 @@ def test_calculate_mean_bpm(directory, start_time, end_time, expected):
     ("test_data/test_data31.csv", [82, (-0.19375, 0.7875)]),
     ("test_data/test_data32.csv", [82, (-375.0, 300.0)])
 ])
-def test_calculate_mean_bpm(directory, expected):
+def test_dictionary(directory, expected):
     dictionary = create_dictionary(directory)
     results = [dictionary["mean_hr_bpm"], dictionary["voltage_extremes"]]
     assert results == expected
@@ -132,7 +132,7 @@ def test_calculate_mean_bpm(directory, expected):
     ("test_data/test_data31.csv", True),
     ("test_data/test_data32.csv", True)
 ])
-def test_calculate_mean_bpm(directory, expected):
+def test_dictionary_output(directory, expected):
     output_json(directory)
     file_name = directory.split('/')[-1].split('.')[0]
     my_file = Path(file_name+".json")
