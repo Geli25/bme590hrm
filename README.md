@@ -10,6 +10,13 @@ BME590
 ***To run this project, change the dictionary_output.py into main, uncomment the last few lines,
 and input the file directory as a string. (Takes one file at a time, no iteration(yet))***
 
+### Project Documentations:
+[Click here to view documentation](https://geli25.github.io/bme590hrm/) 
+(Hosted on Github Pages)
+
+**.rst files are in the "source" folder**
+**.html files are in the "docs" folder**
+
 ### Files for this project:
 
 - **read_data.py**: Imports the data into a pandas dataframe.
