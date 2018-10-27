@@ -6,6 +6,9 @@ By Angelina Liu
 
 BME590
 
+***To run this project, change the dictionary_output.py into main, uncomment the last few lines,
+and input the file directory as a string. (Takes one file at a time, no iteration(yet))***
+
 ###Files for this project:
 
 - **read_data.py**: Imports the data into a pandas dataframe.
@@ -35,7 +38,8 @@ numpy array with all peak times.
  - **dictionary_output.py**: Runs **dictionary.py** and outputs a .json file under the same
  name as the input file. Since I need to get the file name from the directory (which is from using **read_data.py**)
 , I would need to run **dictionary.py** to ensure that the file path is correct so that we would know
-the file name is also correct. Dictionary data is written onto that .json file.
+the file name is also correct. Dictionary data is written onto that .json file. Since all functions are included
+in this file, simply change the file name to main and uncomment the last few lines.
 
 - **test_hrm.py**: All unit tests for all of the above files are on here.
     * *test_import_data, test_validate_data* : Checks the functionality of the test by
@@ -59,3 +63,5 @@ am only using if statements. Will update by Sunday.
 * I really hate PEP8 but I guess it's necessary for unify formats.
 
 * Sphinx is really glitchy.
+
+* May also be good to implement iteration and run the program for all files in a folder.
