@@ -3,6 +3,18 @@ from find_min_max import find_min_max
 
 
 def find_peak(data):
+    """This function finds the peaks to an ECG data strip.
+
+    Args:
+        data(dataframe): A pandas dataframe with a "Voltage" column.
+
+    Returns:
+         {
+            "peaks": An array of voltages of when a peak is detected.
+            "num_of_beats": An int of the number of peaks detected.
+         }
+
+    """
     min_max = find_min_max(data)
     peaks = ss.find_peaks(data.Voltage, height=min_max, distance=200)
     num_of_beats = peaks[0].__len__()

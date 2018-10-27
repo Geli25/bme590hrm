@@ -2,6 +2,20 @@ import numpy as np
 
 
 def get_beat_times(peaks, data):
+    """This function gets the time of which the peak occurred in the dataframe.
+
+    The function accesses the "Time" column via the voltage signal of the peak.
+    The numbers are rounded to 3 decimals (how it was recorded in the csv)
+    to avoid numbers like .99999. Should be used after find_peak.py.
+
+    Args:
+        peaks(array): An array of voltage signal of the peak.
+        data(dataframe): A pandas data frame with at least a "Time" and "Voltage" column.
+
+    Returns:
+        ndarray: A numpy array of times when a beat occurred.
+
+    """
     beat_times = []
     beats_index = peaks[0][0]
     print(beats_index)

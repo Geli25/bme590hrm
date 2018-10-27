@@ -3,7 +3,23 @@ import logging
 
 
 def validate(input_data):
-    # Filter out all NaN value
+    """This function removes all "invalid" dataframe rows.
+
+    The function goes through the data multiple times and removes
+    all rows considered invalid. First it drops all rows containing
+    NaN(automatically converted by pandas if the csv has an empty input),
+    it then drops all rows containing strings (ex. 32c). One dataframe
+    had problems with converting the format of the dataframe, so all dataframes
+    are converted from objects to floats. Finally, all voltage values >300
+    are removed.
+
+    Args:
+        input_data(dataframe):A pandas dataframe with all relevant data.
+
+    Returns:
+        dataframe: A filtered dataframe.
+
+    """
     try:
         data = input_data.dropna()
 
