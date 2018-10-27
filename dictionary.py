@@ -8,7 +8,7 @@ from calculate_mean_bpm import calculate_mean_bpm
 
 
 def create_dictionary(directory):
-    """This function executes all calculation of the data and outputs it under the "metrics" dictionary.
+    """This function executes calculations of data & outputs "metrics" dictionary.
 
     Args:
         directory(string): Path to the file in a string format.

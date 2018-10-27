@@ -10,7 +10,8 @@ def get_beat_times(peaks, data):
 
     Args:
         peaks(array): An array of voltage signal of the peak.
-        data(dataframe): A pandas data frame with at least a "Time" and "Voltage" column.
+        data(dataframe): A pandas data frame with at least a "Time"
+            and "Voltage" column.
 
     Returns:
         ndarray: A numpy array of times when a beat occurred.

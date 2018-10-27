@@ -3,12 +3,13 @@ from dictionary import create_dictionary
 
 
 def output_json(directory):
-    """This function takes creates a dictionary with the ECG data and outputs it to a json file.
+    """This function outputs a json file from "metrics" dictionary.
 
-    The function creates a json file under the same name as the input file, determined
-    through the directory (string). It get the string value between the last occurring
-    '/' and the first occurring '.', and appends ".json" after the returned string, creating
-    the file name. It then writes the json data into that file and formats the data in a readable
+    The function creates a json file under the same name as the input file,
+    determined through the directory (string). It get the string value
+    between the last occurring '/' and the first occurring '.', and appends
+    ".json" after the returned string, creating the file name. It then
+    writes the json data into that file and formats the data in a readable
     way (prettifying the dictionary, basically).
 
     Args:
