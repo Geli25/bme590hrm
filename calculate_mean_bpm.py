@@ -19,8 +19,8 @@ def calculate_mean_bpm(data, beats, start_time=0, end_time=None):
             (from get_beat_times.py).
         start_time(int/float): The start of the desired time frame (seconds),
             default is 0.
-        end_time(int/float): The end of the desired time frame (seconds),default
-            is the time at the end of the strip.
+        end_time(int/float): The end of the desired time frame (seconds),
+            default is the time at the end of the strip.
 
     Returns:
         float: A number of the calculated value of beats at the given
