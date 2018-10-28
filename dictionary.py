@@ -17,24 +17,31 @@ def create_dictionary(directory):
         dict: A dictionary with key value pairs of necessary ECG analysis data.
 
     """
-    data = validate(import_data(directory))
-    min_max = find_min_max(data)
-    duration = get_duration(data)
-    peaks = find_peak(data)
-    beats = get_beat_times(peaks, data)
-    mean_bpm = calculate_mean_bpm(data, beats)
+    try:
+        data = validate(import_data(directory))
+        min_max = find_min_max(data)
+        duration = get_duration(data)
+        peaks = find_peak(data)
+        beats = get_beat_times(peaks, data)
+        mean_bpm = calculate_mean_bpm(data, beats)
 
-    metrics = {
-        "mean_hr_bpm": mean_bpm,
-        "voltage_extremes": min_max,
-        "duration": duration,
-        "num_beats": peaks[1],
-        "beats": beats
-    }
+        metrics = {
+            "mean_hr_bpm": mean_bpm,
+            "voltage_extremes": min_max,
+            "duration": duration,
+            "num_beats": peaks[1],
+            "beats": beats
+        }
+    # Since the directory error is already handled by read_data
+    # no need to do more logging
+    except FileNotFoundError:
+        return
+    except ValueError:
+        return
+    except AttributeError:
+        return
+    except NameError:
+        return
 
     print(metrics)
     return metrics
-
-
-if __name__ == '__main__':
-    create_dictionary("test_data/test_data32.csv")

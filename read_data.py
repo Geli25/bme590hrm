@@ -2,7 +2,7 @@ import pandas as pd
 import logging
 
 
-def import_data(directory):
+def import_data(path):
     """This function reads the csv files into a panda dataframe.
 
     The function loads all data from the csv file to a pandas dataframe,
@@ -16,6 +16,7 @@ def import_data(directory):
 
     """
     try:
+        directory = path.replace(' ', '')
         headers = ['Time', 'Voltage']
         data = pd.read_csv(directory, names=headers)
     except FileNotFoundError:

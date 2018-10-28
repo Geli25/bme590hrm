@@ -10,11 +10,22 @@ Welcome to bme590hrm's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+This is the documentation site to the **Heart Rate Monitor**
+assignment created by *Angelina Liu* (cl428).
+
 
 
 Indices and tables
 ==================
 
-* :ref:`genindex`
 * :ref:`modindex`
+
+   This is the index page to all modules/functions.
+* :ref:`genindex`
+
+   This is the index to all modules and functions. Since all functions
+   are in separate modules, it may seem redundant. But this can be used to find function names,
+   which is sometimes separate from the file name.
 * :ref:`search`
+
+   Use the search function to search for all content pages.

@@ -15,7 +15,9 @@ from dictionary_output import output_json
     ("test_data/test_data1.csv", 10000),
     ("test_data/test_data2.csv", 10000),
     ("test_data/test_data31.csv", 10000),
-    ("test_data/test_data32.csv", 10000)
+    ("test_data/test_data32.csv", 10000),
+    ("  test_data/test_data1.csv", 10000),
+    ("test_data/test _data1.csv", 10000)
 ])
 def test_import_data(directory, expected):
     data = import_data(directory)
@@ -102,7 +104,12 @@ def test_get_beat_times(directory, expected):
     ("test_data/test_data25.csv", 2, 5, 60),
     ("test_data/test_data30.csv", 0, 10, 54),
     ("test_data/test_data31.csv", None, None, 82),
-    ("test_data/test_data32.csv", 10, 20, 77)
+    ("test_data/test_data32.csv", 10, 20, 77),
+    ("test_data/test_data12.csv", "yo", 20, 164),
+    ("test_data/test_data5.csv", 10, "yo", 76),
+    ("test_data/test_data9.csv", -10, 30, 71),
+    ("test_data/test_data21.csv", 30, 5, 82),
+    ("test_data/test_data8.csv", 10, -20, 73),
 ])
 def test_calculate_mean_bpm(directory, start_time, end_time, expected):
     data = validate(import_data(directory))
@@ -130,14 +137,16 @@ def test_dictionary(directory, expected):
     ("test_data/test_data2.csv", True),
     ("test_data/test_data30.csv", True),
     ("test_data/test_data31.csv", True),
-    ("test_data/test_data32.csv", True)
+    ("test_data/test_data32.csv", True),
+    ("20", False),
+    ("test/data/test_data.32.csv", False)
 ])
 def test_dictionary_output(directory, expected):
-    output_json(directory)
+    bool_output = output_json(directory)
     file_name = directory.split('/')[-1].split('.')[0]
     my_file = Path(file_name+".json")
     if my_file.is_file():
         exists = True
     else:
         exists = False
-    assert exists == expected
+    assert exists == bool_output == expected
