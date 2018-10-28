@@ -24,7 +24,7 @@ def calculate_mean_bpm(data, beats, start_time=0, end_time=None):
 
     Returns:
         float: A number of the calculated value of beats at the given
-            timeframe.
+        timeframe.
 
     """
     if end_time is None:
