@@ -6,7 +6,7 @@ def find_min_max(data):
 
     Returns:
         tuple: A tuple containing the minimum and maximum values of the data.
-            Minimum is the first returned value, and maximum, the second.
+        Minimum is the first returned value, and maximum, the second.
 
     """
     ecg_min = data.Voltage.min()
