@@ -1,4 +1,5 @@
 import numpy as np
+import logging
 
 
 def get_beat_times(peaks, data):
@@ -9,7 +10,7 @@ def get_beat_times(peaks, data):
     to avoid numbers like .99999. Should be used after find_peak.py.
 
     Args:
-        peaks(array): An array of voltage signal of the peak.
+        peaks(array): An array of information about the peak.
         data(dataframe): A pandas data frame with at least a "Time"
             and "Voltage" column.
 
@@ -17,15 +18,26 @@ def get_beat_times(peaks, data):
         ndarray: A numpy array of times when a beat occurred.
 
     """
-    beat_times = []
-    beats_index = peaks[0][0]
-    print(beats_index)
-    for beat in beats_index:
-        # print(beat)
-        time_of_beat = data.loc[beat, "Time"]
-        mod_time_of_beat = round(time_of_beat, 3)
-        # print(mod_time_of_beat)
-        beat_times.append(mod_time_of_beat)
-    numpy_beat_times = np.array(beat_times)
-    print(numpy_beat_times[0], numpy_beat_times[-1])
-    return numpy_beat_times
+    try:
+        beat_times = []
+        beats_index = peaks[0][0]
+        print(beats_index)
+        for beat in beats_index:
+            # print(beat)
+            time_of_beat = data.loc[beat, "Time"]
+            if time_of_beat.size == 0:
+                raise ValueError
+            mod_time_of_beat = round(time_of_beat, 3)
+            # print(mod_time_of_beat)
+            beat_times.append(mod_time_of_beat)
+        numpy_beat_times = np.array(beat_times)
+        print(numpy_beat_times[0], numpy_beat_times[-1])
+        return numpy_beat_times
+    except ValueError:
+        logging.warning("No beat time detected, double check dataframe")
+    except AttributeError:
+        logging.error("The dataframe needs to have a Time header")
+        return
+    except IndexError:
+        logging.error("Please find peak data via scipy.find_peaks()")
+        return
