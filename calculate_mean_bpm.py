@@ -170,9 +170,9 @@ def calculate_mean_bpm(data, beats, start_time=None, end_time=None):
         logging.error("First parameter must be a pandas dataframe")
         return
 
-#
-# if __name__ == '__main__':
-#     data=validate(import_data("test_data/test_data15.csv"))
-#     peaks=find_peak(data)
-#     beats=get_beat_times(peaks,data)
-#     calculate_mean_bpm(data,beats,"hey",20)
+
+if __name__ == '__main__':
+    data=validate(import_data("test_data/test_data8.csv"))
+    peaks=find_peak(data)
+    beats=get_beat_times(peaks,data)
+    calculate_mean_bpm(data,beats,10,-20)

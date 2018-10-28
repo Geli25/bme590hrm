@@ -29,17 +29,17 @@ def output_json(directory):
         return True
     # Since the directory error is already handled by read_data
     # no need to do more logging
-    except FileNotFoundError:
-        return False
-    except ValueError:
-        return False
-    except AttributeError:
-        return False
-    except NameError:
-        return False
+    # except FileNotFoundError:
+    #     return False
+    # except ValueError:
+    #     return False
+    # except AttributeError:
+    #     return False
+    # except NameError:
+    #     return False
     except TypeError:
         return False
 
 
-if __name__ == '__main__':
-    print(output_json("test_data/test_data41.csv"))
+# if __name__ == '__main__':
+#     output_json("Insert link here")
