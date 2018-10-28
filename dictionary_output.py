@@ -16,7 +16,7 @@ def output_json(directory):
         directory(string): Path to the file in a string format.
 
     Returns:
-        .json: A json file containing all dictionary data.
+        bool: True if successful, false if failed (error).
     """
     try:
         metrics = create_dictionary(directory)
