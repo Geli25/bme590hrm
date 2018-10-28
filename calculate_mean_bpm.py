@@ -48,11 +48,11 @@ def calculate_mean_bpm(data, beats, start_time=None, end_time=None):
             raise ValueError
         if start_time > end_time:
             raise ValueError
-        in_range = np.logical_and(beats >= start_time, beats <= end_time)
-        beats_in_range_index = np.where(in_range)
+        in_rg = np.logical_and(beats >= start_time, beats <= end_time)
+        beats_in_range_i = np.where(in_rg)
         print(start_time, end_time)
-        print(beats_in_range_index[0].size)
-        bps = beats_in_range_index[0].size / (end_time - start_time)
+        print(beats_in_range_i[0].size)
+        bps = beats_in_range_i[0].size / (end_time - start_time)
         bpm = bps * 60
         # print(end_time-start_time)
         rounded_bpm = round(bpm, 0)
@@ -68,11 +68,11 @@ def calculate_mean_bpm(data, beats, start_time=None, end_time=None):
                 if end_time > data["Time"].iloc[-1] or end_time < 0:
                     end_time = data["Time"].iloc[-1]
                     start_time = data["Time"].iloc[0]
-                    in_range = np.logical_and(beats >= start_time, beats <= end_time)
-                    beats_in_range_index = np.where(in_range)
+                    in_rg = np.logical_and(beats >= start_time, beats <= end_time)
+                    beats_in_range_i = np.where(in_rg)
                     print(start_time, end_time)
-                    print(beats_in_range_index[0].size)
-                    bps = beats_in_range_index[0].size / (end_time - start_time)
+                    print(beats_in_range_i[0].size)
+                    bps = beats_in_range_i[0].size / (end_time - start_time)
                     bpm = bps * 60
                     # print(end_time-start_time)
                     rounded_bpm = round(bpm, 0)
@@ -83,11 +83,11 @@ def calculate_mean_bpm(data, beats, start_time=None, end_time=None):
                     start_time = data["Time"].iloc[0]
                 logging.warning("Input invalid, switched to default")
                 end_time = data["Time"].iloc[-1]
-                in_range = np.logical_and(beats >= start_time, beats <= end_time)
-                beats_in_range_index = np.where(in_range)
+                in_rg = np.logical_and(beats >= start_time, beats <= end_time)
+                beats_in_range_i = np.where(in_rg)
                 print(start_time, end_time)
-                print(beats_in_range_index[0].size)
-                bps = beats_in_range_index[0].size / (end_time - start_time)
+                print(beats_in_range_i[0].size)
+                bps = beats_in_range_i[0].size / (end_time - start_time)
                 bpm = bps * 60
                 # print(end_time-start_time)
                 rounded_bpm = round(bpm, 0)
@@ -98,11 +98,11 @@ def calculate_mean_bpm(data, beats, start_time=None, end_time=None):
                     end_time = data["Time"].iloc[-1]
                 logging.warning("Input invalid, switched to default")
                 start_time = data["Time"].iloc[0]
-                in_range = np.logical_and(beats >= start_time, beats <= end_time)
-                beats_in_range_index = np.where(in_range)
+                in_rg = np.logical_and(beats >= start_time, beats <= end_time)
+                beats_in_range_i = np.where(in_rg)
                 print(start_time, end_time)
-                print(beats_in_range_index[0].size)
-                bps = beats_in_range_index[0].size / (end_time - start_time)
+                print(beats_in_range_i[0].size)
+                bps = beats_in_range_i[0].size / (end_time - start_time)
                 bpm = bps * 60
                 # print(end_time-start_time)
                 rounded_bpm = round(bpm, 0)
@@ -110,14 +110,14 @@ def calculate_mean_bpm(data, beats, start_time=None, end_time=None):
                 return rounded_bpm
         except TypeError:
             if type(start_time) is str:
-                logging.warning("Input must be a float or int, input switched to default")
+                logging.warning("Input must be a float or int, switched to default")
                 start_time = data["Time"].iloc[0]
                 end_time = data["Time"].iloc[-1]
-                in_range = np.logical_and(beats >= start_time, beats <= end_time)
-                beats_in_range_index = np.where(in_range)
+                in_rg = np.logical_and(beats >= start_time, beats <= end_time)
+                beats_in_range_i = np.where(in_rg)
                 print(start_time, end_time)
-                print(beats_in_range_index[0].size)
-                bps = beats_in_range_index[0].size / (end_time - start_time)
+                print(beats_in_range_i[0].size)
+                bps = beats_in_range_i[0].size / (end_time - start_time)
                 bpm = bps * 60
                 # print(end_time-start_time)
                 rounded_bpm = round(bpm, 0)
@@ -125,41 +125,41 @@ def calculate_mean_bpm(data, beats, start_time=None, end_time=None):
                 return rounded_bpm
     except TypeError:
         if type(end_time) is str and type(start_time) is str:
-            logging.warning("Input must be a float or int, input switched to default")
+            logging.warning("Input must be a float or int, switched to default")
             end_time = data["Time"].iloc[-1]
             start_time = data["Time"].iloc[0]
-            in_range = np.logical_and(beats >= start_time, beats <= end_time)
-            beats_in_range_index = np.where(in_range)
+            in_rg = np.logical_and(beats >= start_time, beats <= end_time)
+            beats_in_range_i = np.where(in_rg)
             print(start_time, end_time)
-            print(beats_in_range_index[0].size)
-            bps = beats_in_range_index[0].size / (end_time - start_time)
+            print(beats_in_range_i[0].size)
+            bps = beats_in_range_i[0].size / (end_time - start_time)
             bpm = bps * 60
             # print(end_time-start_time)
             rounded_bpm = round(bpm, 0)
             print(rounded_bpm)
             return rounded_bpm
         if type(end_time) is str:
-            logging.warning("Input must be a float or int, input switched to default")
+            logging.warning("Input must be a float or int, switched to default")
             start_time = data["Time"].iloc[0]
             end_time = data["Time"].iloc[-1]
-            in_range = np.logical_and(beats >= start_time, beats <= end_time)
-            beats_in_range_index = np.where(in_range)
+            in_rg = np.logical_and(beats >= start_time, beats <= end_time)
+            beats_in_range_i = np.where(in_rg)
             print(start_time, end_time)
-            print(beats_in_range_index[0].size)
-            bps = beats_in_range_index[0].size / (end_time - start_time)
+            print(beats_in_range_i[0].size)
+            bps = beats_in_range_i[0].size / (end_time - start_time)
             bpm = bps * 60
             # print(end_time-start_time)
             rounded_bpm = round(bpm, 0)
             print(rounded_bpm)
             return rounded_bpm
         if type(start_time) is str:
-            logging.warning("Input must be a float or int, input switched to default")
+            logging.warning("Input must be a float or int, switched to default")
             start_time = data["Time"].iloc[0]
-            in_range = np.logical_and(beats >= start_time, beats <= end_time)
-            beats_in_range_index = np.where(in_range)
+            in_rg = np.logical_and(beats >= start_time, beats <= end_time)
+            beats_in_range_i = np.where(in_rg)
             print(start_time, end_time)
-            print(beats_in_range_index[0].size)
-            bps = beats_in_range_index[0].size / (end_time - start_time)
+            print(beats_in_range_i[0].size)
+            bps = beats_in_range_i[0].size / (end_time - start_time)
             bpm = bps * 60
             # print(end_time-start_time)
             rounded_bpm = round(bpm, 0)

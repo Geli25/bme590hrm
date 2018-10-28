@@ -37,7 +37,9 @@ def output_json(directory):
         return False
     except NameError:
         return False
+    except TypeError:
+        return False
 
 
-# if __name__ == '__main__':
-#     print(output_json("test_data/test_data41.csv"))
+if __name__ == '__main__':
+    print(output_json("test_data/test_data41.csv"))
