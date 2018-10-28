@@ -1,11 +1,6 @@
 import numpy as np
 import logging
 
-from read_data import import_data
-from validate_data import validate
-from find_peak import find_peak
-from get_beat_times import get_beat_times
-
 
 def calculate_mean_bpm(data, beats, start_time=None, end_time=None):
     """This function calculates a bpm based on user indicated time frame.
@@ -169,10 +164,3 @@ def calculate_mean_bpm(data, beats, start_time=None, end_time=None):
     except IndexError:
         logging.error("First parameter must be a pandas dataframe")
         return
-
-
-if __name__ == '__main__':
-    data=validate(import_data("test_data/test_data8.csv"))
-    peaks=find_peak(data)
-    beats=get_beat_times(peaks,data)
-    calculate_mean_bpm(data,beats,10,-20)
