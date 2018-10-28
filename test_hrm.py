@@ -130,7 +130,9 @@ def test_dictionary(directory, expected):
     ("test_data/test_data2.csv", True),
     ("test_data/test_data30.csv", True),
     ("test_data/test_data31.csv", True),
-    ("test_data/test_data32.csv", True)
+    ("test_data/test_data32.csv", True),
+    ("20", False),
+    ("test/data/test_data.32.csv", False)
 ])
 def test_dictionary_output(directory, expected):
     output_json(directory)
