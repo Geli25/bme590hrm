@@ -25,7 +25,7 @@ def get_beat_times(peaks, data):
         for beat in beats_index:
             # print(beat)
             time_of_beat = data.loc[beat, "Time"]
-            if time_of_beat.empty:
+            if time_of_beat.size == 0:
                 raise ValueError
             mod_time_of_beat = round(time_of_beat, 3)
             # print(mod_time_of_beat)
