@@ -23,8 +23,8 @@ Indices and tables
    This is the index page to all modules/functions.
 * :ref:`genindex`
 
-   This is the index to all modules and functions, since all functions
-   are in separate modules, it may seem redundant. But can be used to find function names,
+   This is the index to all modules and functions. Since all functions
+   are in separate modules, it may seem redundant. But this can be used to find function names,
    which is sometimes separate from the file name.
 * :ref:`search`
 
