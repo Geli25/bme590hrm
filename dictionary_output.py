@@ -42,4 +42,4 @@ def output_json(directory):
 
 
 # if __name__ == '__main__':
-#     output_json("Insert link here")
+#     print(output_json("Insert link here"))

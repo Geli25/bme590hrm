@@ -15,7 +15,9 @@ from dictionary_output import output_json
     ("test_data/test_data1.csv", 10000),
     ("test_data/test_data2.csv", 10000),
     ("test_data/test_data31.csv", 10000),
-    ("test_data/test_data32.csv", 10000)
+    ("test_data/test_data32.csv", 10000),
+    ("  test_data/test_data1.csv", 10000),
+    ("test_data/test _data1.csv", 10000)
 ])
 def test_import_data(directory, expected):
     data = import_data(directory)
