@@ -68,7 +68,8 @@ def calculate_mean_bpm(data, beats, start_time=None, end_time=None):
                 if end_time > data["Time"].iloc[-1] or end_time < 0:
                     end_time = data["Time"].iloc[-1]
                     start_time = data["Time"].iloc[0]
-                    in_rg = np.logical_and(beats >= start_time, beats <= end_time)
+                    npl = np.logical_and
+                    in_rg = npl(beats >= start_time, beats <= end_time)
                     beats_in_range_i = np.where(in_rg)
                     print(start_time, end_time)
                     print(beats_in_range_i[0].size)
